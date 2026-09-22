@@ -1,7 +1,12 @@
+'use client'
 import Link from 'next/link';
 import React from 'react';
+import useUser from '../hooks/useUser';
 
 const BookCard = ({book}) => {
+
+  const user =useUser();
+  console.log('from context in books card',user)
 
   const{id, title, author, price, category, image, description} = book;
     return (
@@ -16,7 +21,7 @@ const BookCard = ({book}) => {
     <div className="card-actions justify-end">
       <button className="btn btn-primary">Buy Now</button>
       <Link href={`/books/${book.id}`}>
-         <button className="btn ">Show Detail</button>
+         <button className="btn btn-primary">Show Detail</button>
       </Link>
     </div>
   </div>

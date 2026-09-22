@@ -1,3 +1,4 @@
+// 'use client'
 import React from 'react';
 
 
@@ -8,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 const BookId = async ({ params }) => {
-
+    
     const {bookId} = await params;
 
     const res = await fetch(`http://localhost:5000/books/${bookId}`);
